@@ -6,24 +6,51 @@
     <title>Jigsaw Puzzle</title>
     <link rel="icon" href="assest/images/icon.png">
     <link rel="stylesheet" href="assest/Jquery/jquery-ui.min.css">
+    <link rel="stylesheet" href="assest/Boostrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 
-<body>
 
-    <body>
-        <div id="container">
-            <div id="pieceContainer"></div>
-            <div id="puzzleContainer"></div>
-            <ul id="buttons">
-                <li><button id="btnStart">Start</button></li>
-                <li><button id="btnReset">Reset</button></li>
-                <li><button id="btnNext">Level 2</button></li>
-            </ul>
-        </div>
-        <script src="assest/Jquery/jquery-3.7.0.min.js"></script>
-        <script src="assest/Jquery/jquery-ui.min.js"></script>
-        <script src="script.js"></script>
-    </body>
+<body>
+    <!--============================= game Home ==============================-->
+    <div id="dashboard">
+        <nav class="navbar navbar-expand-lg bg-white border-bottom sticky-top" style="border-radius: 10px;">
+            <div class="container-fluid">
+                <a class="navbar-brand">
+                    <img src="assest/images/icon.png" alt="" style="width: 45px; height: 45px;">JIGSAW PUZZLE</a>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li id="btnDashboard" class="nav-item">
+                            <a class="nav-link" aria-current="page" href="#"></i></a>
+                        </li>
+                        <li id="btnContainer" class="nav-item">
+                            <a class="nav-link" aria-current="page" href="#"></i>
+                                <img src="assest/images/startup.png" alt="" style="width: 45px;"></a>
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+    <!-- ============================Game Main Form===================== -->
+    <div id="container" class="full-height h-75 col-md-10 bg-dark shadow-lg rounded-5">
+        <div id="pieceContainer" class="bg-light shadow-lg rounded-5"></div>
+        <div id="puzzleContainer" class="bg-light shadow-lg rounded-5"></div>
+        <ul id="buttons">
+            <li><button id="btnStart">Start</button></li>
+            <li><button id="btnReset">Reset</button></li>
+            <li><button id="btnNext">Level 2</button></li>
+        </ul>
+    </div>
+
+
+
+    <!-- =============================JavaScript======================================-->
+    <script src="assest/Jquery/jquery-3.7.0.min.js"></script>
+    <script src="assest/Jquery/jquery-ui.min.js"></script>
+    <script src="script.js"></script>
+    <script src="index.js"></script>
+</body>
 
 </html>
