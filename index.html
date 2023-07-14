@@ -3,7 +3,8 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Japan Letter Game</title>
+    <title>Jigsaw Puzzle</title>
+    <link rel="icon" href="assest/images/icon.png">
     <link rel="stylesheet" href="assest/Jquery/jquery-ui.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
@@ -11,8 +12,15 @@
 <body>
 
     <body>
-        <canvas id="canvas1"></canvas>
-
+        <div id="container">
+            <div id="pieceContainer"></div>
+            <div id="puzzleContainer"></div>
+            <ul id="buttons">
+                <li><button id="btnStart">Start</button></li>
+                <li><button id="btnReset">Reset</button></li>
+                <li><button id="btnNext">Level 2</button></li>
+            </ul>
+        </div>
         <script src="assest/Jquery/jquery-3.7.0.min.js"></script>
         <script src="assest/Jquery/jquery-ui.min.js"></script>
         <script src="script.js"></script>
