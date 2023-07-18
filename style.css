@@ -19,8 +19,8 @@ body{
 }
 
 #pieceContainer{
-    width: 532px;
-    height: 400px;
+    width: 402px;
+    height: 402px;
     border: 1px solid black;
     float: left;
     text-align: center;
@@ -29,8 +29,8 @@ body{
 }
 
 #puzzleContainer{
-    width: 532px;
-    height: 400px;
+    width: 402px;
+    height: 402px;
     border: 1px solid black;
     float: right;
 }
@@ -55,4 +55,13 @@ ul button{
 
 #btnReset{
     display: none;
+}
+
+.piece{
+    width: 100px;
+    height: 100px;
+    border: 1px solid black;
+    float: left;
+    background-image: url(assest/images/example.jpeg);
+    background-repeat: no-repeat;
 }

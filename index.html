@@ -5,9 +5,26 @@
     <meta charset="UTF-8">
     <title>Jigsaw Puzzle</title>
     <link rel="icon" href="assest/images/icon.png">
-    <link rel="stylesheet" href="assest/Jquery/jquery-ui.min.css">
+    <link rel="stylesheet" href="assest/Jquery/jquery-ui-1.13.2/jquery-ui.theme.css">
     <link rel="stylesheet" href="assest/Boostrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="style.css">
+    <!-- =============================JavaScript======================================-->
+    <script src="assest/Jquery/jquery-3.7.0.min.js"></script>
+    <script src="assest/Jquery/jquery-ui-1.13.2/jquery-ui.min.js"></script>
+    <script src="script.js"></script>
+    <script>
+        $(document).ready(function(){
+            var rows = 4, columns = 4;
+            var pieces = "";
+            for(var i=0,top=0;i<rows;i++,top-=100){
+                for(var j=0,left=0;j<columns;j++,left-=100){
+                    pieces += "<div style='background-position:"+ left +"px " + top + "px;' class='piece'></div>";
+                }
+            }
+            console.log(pieces);
+            $("#puzzleContainer").html(pieces);
+        });
+    </script>
 </head>
 
 
@@ -34,9 +51,9 @@
         </nav>
     </div>
     <!-- ============================Game Main Form===================== -->
-    <div id="container" class="full-height h-70 col-md-10 bg-dark shadow-lg rounded-5">
-        <div id="pieceContainer" class="bg-light shadow-lg rounded-5"></div>
-        <div id="puzzleContainer" class="bg-light shadow-lg rounded-5"></div>
+    <div id="container" class="full-height h-70 bg-dark shadow-lg rounded-5">
+        <div id="pieceContainer" class="bg-light shadow-lg"></div>
+        <div id="puzzleContainer" class="bg-light shadow-lg"></div>
         <ul id="buttons">
             <li><button id="btnStart">Start 
                 <img id="starticon" src="assest/images/start.png" alt=""></button></li>
@@ -47,9 +64,6 @@
 
 
     <!-- =============================JavaScript======================================-->
-    <script src="assest/Jquery/jquery-3.7.0.min.js"></script>
-    <script src="assest/Jquery/jquery-ui.min.js"></script>
-    <script src="script.js"></script>
     <script src="index.js"></script>
 </body>
 
