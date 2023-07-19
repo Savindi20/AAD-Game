@@ -31,9 +31,14 @@ $(document).ready(function(){
         implementLogic()
     });
     function implementLogic(){
-        $(".draggablePiece").draggable();
+        $(".draggablePiece").draggable({
+            revert:"invalid",
+        });
         $(".droppableSpace").droppable({
             hoverClass:"ui-state-highlight",
+            accept:function(){
+                return !$(this).hasClass("piecePresent")
+            },
             drop:function(event,ui){
                 var draggableElement = ui.draggable;
                 var dropedOn = $(this);

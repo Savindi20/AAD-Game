@@ -21,6 +21,7 @@ body{
 #pieceContainer{
     width: 402px;
     height: 402px;
+    background-color: rgb(255, 205, 242);
     border: 1px solid black;
     float: left;
     text-align: center;
@@ -32,6 +33,7 @@ body{
 #puzzleContainer{
     width: 402px;
     height: 402px;
+    background-color: rgb(158, 216, 255);
     border: 1px solid black;
     float: right;
 }
