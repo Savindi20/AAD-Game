@@ -12,7 +12,7 @@ $(document).ready(function(){
         pieces.each(function(){
             var leftPosition = Math.floor(Math.random()*290) + "px";
             var topPosition = Math.floor(Math.random()*290) + "px";
-            $(this).css({
+            $(this).addClass("draggablePiece").css({
                 position:"absolute",
                 left:leftPosition,
                 top:topPosition
@@ -22,12 +22,29 @@ $(document).ready(function(){
         var emptyString = ""
         for(var i=0;i<rows;i++){
             for(var j=0;j<columns;j++){
-                emptyString += "<div style='background-image:none;' class='piece'></div>";
+                emptyString += "<div style='background-image:none;' class='piece droppableSpace'></div>";
             }
         }
         $("#puzzleContainer").html(emptyString);
         $(this).hide();
         $("#btnReset").show()
+        implementLogic()
     });
+    function implementLogic(){
+        $(".draggablePiece").draggable();
+        $(".droppableSpace").droppable({
+            drop:function(event,ui){
+                var draggableElement = ui.draggable;
+                var dropedOn = $(this);
+                dropedOn.addClass("piecePresent");
+                $(draggableElement).addClass("droppedPiece")
+                .css({
+                    top:0,
+                    left:0,
+                    position:"relative"
+                }).appendTo(dropedOn);
+            }
+        });
+    }
 });
 
