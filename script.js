@@ -33,6 +33,12 @@ $(document).ready(function(){
     function implementLogic(){
         $(".draggablePiece").draggable({
             revert:"invalid",
+            start:function(){
+                if($(this).hasClass("droppedPiece")){
+                    $(this).removeClass("droppedPiece");
+                    $(this).parent().removeClass("piecePresent");
+                }
+            }
         });
         $(".droppableSpace").droppable({
             hoverClass:"ui-state-highlight",
