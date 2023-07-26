@@ -1,9 +1,9 @@
 $(document).ready(function(){
     var rows = 4, columns = 4;
     var pieces = "";
-    for(var i=0,top=0;i<rows;i++,top-=100){
-        for(var j=0,left=0;j<columns;j++,left-=100){
-            pieces += "<div style='background-position:"+ left +"px " + top + "px;' class='piece'></div>";
+    for(var i=0,top=0,order=0;i<rows;i++,top-=100){
+        for(var j=0,left=0;j<columns;j++,left-=100,order++){
+            pieces += "<div style='background-position:" + left +"px " + top + "px;' class='piece' data-order=" + order + "></div>";
         }
     }
     $("#puzzleContainer").html(pieces);
@@ -30,6 +30,21 @@ $(document).ready(function(){
         $("#btnReset").show()
         implementLogic()
     });
+    function checkIfPuzzleSolved(){
+        if($("#puzzleContainer .droppedPiece").length != 16){
+            return false;
+        }
+        for(var k=0;k<16;k++){
+            var item = $("#puzzleContainer .droppedPiece:eq(" + k +")");
+            var order = item.data("order");
+            if(k != order){
+                $("#pieceContainer").text("Try Again!");
+                return false;
+            }
+        }
+        $("#pieceContainer").text("WOW! You are a GENIUS!");
+        return true;
+    }
     function implementLogic(){
         $(".draggablePiece").draggable({
             revert:"invalid",
@@ -55,6 +70,7 @@ $(document).ready(function(){
                     left:0,
                     position:"relative"
                 }).appendTo(dropedOn);
+                checkIfPuzzleSolved();
             }
         });
     }
