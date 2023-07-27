@@ -1,11 +1,5 @@
 $(document).ready(function(){
-    var rows = 4, columns = 4;
-    var pieces = "";
-    for(var i=0,top=0,order=0;i<rows;i++,top-=100){
-        for(var j=0,left=0;j<columns;j++,left-=100,order++){
-            pieces += "<div style='background-position:" + left +"px " + top + "px;' class='piece' data-order=" + order + "></div>";
-        }
-    }
+    var pieces = createPieces(true);
     $("#puzzleContainer").html(pieces);
     $("#btnStart").click(function(){
         var pieces = $("#puzzleContainer div");
@@ -19,17 +13,34 @@ $(document).ready(function(){
             })
             $("#pieceContainer").append($(this))
         });
-        var emptyString = ""
-        for(var i=0;i<rows;i++){
-            for(var j=0;j<columns;j++){
-                emptyString += "<div style='background-image:none;' class='piece droppableSpace'></div>";
-            }
-        }
+        var emptyString = createPieces(false);
         $("#puzzleContainer").html(emptyString);
         $(this).hide();
         $("#btnReset").show()
         implementLogic()
     });
+    $("#btnReset").click(function(){
+        var newPieces = createPieces(true);
+        $("#puzzleContainer").html(newPieces);
+        $(this).hide();
+        $("#btnStart").show();
+        $("#pieceContainer").empty();
+    });
+    function createPieces(withImage){
+        var rows = 4, columns = 4;
+        var pieces = "";
+        for(var i=0,top=0,order=0;i<rows;i++,top-=100){
+            for(var j=0,left=0;j<columns;j++,left-=100,order++){
+                if(withImage){
+                    pieces += "<div style='background-position:" + left +"px " + top + "px;' class='piece' data-order=" + order + "></div>";
+                }
+                else{
+                    pieces += "<div style='background-image:none;' class='piece droppableSpace'></div>";
+                }
+            }
+        }
+        return pieces;
+    }
     function checkIfPuzzleSolved(){
         if($("#puzzleContainer .droppedPiece").length != 16){
             return false;
