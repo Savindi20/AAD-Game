@@ -4,54 +4,59 @@
 <head>
     <meta charset="UTF-8">
     <title>Jigsaw Puzzle</title>
-    <link rel="icon" href="assest/images/icon.png">
-    <link rel="stylesheet" href="assest/Jquery/jquery-ui-1.13.2/jquery-ui.theme.css">
-    <link rel="stylesheet" href="assest/Boostrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="style.css">
+    <link href="assest/images/icon.png" rel="icon">
+    <link href="assest/Jquery/jquery-ui-1.13.2/jquery-ui.theme.css" rel="stylesheet">
+    <link href="assest/Boostrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
     <!-- =============================JavaScript======================================-->
     <script src="assest/Jquery/jquery-3.7.0.min.js"></script>
     <script src="assest/Jquery/jquery-ui-1.13.2/jquery-ui.min.js"></script>
     <script src="script.js"></script>
 </head>
 
-
 <body>
-    <!--============================= game Home ==============================-->
-    <div id="dashboard">
-        <nav class="navbar navbar-expand-lg bg-white border-bottom sticky-top" style="border-radius: 10px;" id="nav">
-            <div class="container-fluid">
-                <a class="navbar-brand">
-                    <img src="assest/images/icon.png" alt="" style="width: 45px; height: 45px;">JIGSAW PUZZLE</a>
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                        <li id="btnDashboard" class="nav-item">
-                            <a class="nav-link" aria-current="page" href="#"></i></a>
-                        </li>
-                        <li id="btnContainer" class="nav-item">
-                            <a class="nav-link" aria-current="page" href="#"></i>
-                                <img id="SIcon" src="assest/images/startup.png" alt="" style="width: 45px;"></a>
-                        </li>
-                    </ul>
-                </div>
+<!--============================= game Home ==============================-->
+<div id="dashboard">
+    <nav class="navbar navbar-expand-lg bg-white border-bottom sticky-top" id="nav" style="border-radius: 10px;">
+        <div class="container-fluid">
+            <a class="navbar-brand">
+                <img alt="" src="assest/images/icon.png" style="width: 45px; height: 45px;">JIGSAW PUZZLE</a>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item" id="btnDashboard">
+                        <a aria-current="page" class="nav-link" href="#"></i></a>
+                    </li>
+                    <li class="nav-item" id="btnContainer">
+                        <a aria-current="page" class="nav-link" href="#"></i>
+                            <img alt="" id="SIcon" src="assest/images/startup.png" style="width: 45px;"></a>
+                    </li>
+                </ul>
             </div>
-        </nav>
-    </div>
-    <!-- ============================Game Main Form===================== -->
-    <div id="container" class="full-height h-70 bg-dark shadow-lg rounded-5">
-        <div id="pieceContainer" class="shadow-lg"></div>
-        <div id="puzzleContainer" class="shadow-lg"></div>
-        <ul id="buttons">
-            <li><button id="btnStart">Start 
-                <img id="starticon" src="assest/images/play.png" alt=""></button></li>
-            <li><button id="btnReset">Reset
-                <img id="starticon" src="assest/images/restart.png" alt=""></button></li>
-        </ul>
-    </div>
+        </div>
+    </nav>
+</div>
+<!-- ============================Game Main Form===================== -->
+<div class="full-height h-70 bg-dark shadow-lg rounded-5" id="container">
+    <div class="shadow-lg" id="pieceContainer"></div>
+    <div class="shadow-lg" id="puzzleContainer"></div>
+    <ul id="buttons">
+        <li>
+            <button id="btnStart">Start
+                <img alt="" id="starticon" src="assest/images/play.png"></button>
+        </li>
+        <li>
+            <button id="btnReset" onclick="resetCountdown()">Reset
+                <img alt="" id="starticon" src="assest/images/restart.png"></button>
+        </li>
+        <button id="finishButton" onclick="finishCountdown()">Finish</button>
+    </ul>
+    <div class="score" id="score">Score: 0</div>
+    <div class="timer" id="timer">1:00</div>
 
+</div>
 
-
-    <!-- =============================JavaScript======================================-->
-    <script src="index.js"></script>
+<!-- =============================JavaScript======================================-->
+<script src="index.js"></script>
 </body>
 
 </html>

@@ -87,3 +87,66 @@ $(document).ready(function(){
     }
 });
 
+document.addEventListener("DOMContentLoaded", function () {
+    const scoreElement = document.getElementById("score");
+    const timerElement = document.getElementById("timer");
+    const finishButton = document.getElementById("finishButton");
+    const btnStart = document.getElementById("btnStart");
+    const btnReset = document.getElementById("btnReset");
+
+    let secondsRemaining = 60;
+    let timerInterval;
+
+    function updateTimerDisplay() {
+        const minutes = Math.floor(secondsRemaining / 60);
+        const seconds = secondsRemaining % 60;
+        timerElement.textContent = `${minutes}:${seconds.toString().padStart(2, "0")}`;
+    }
+
+    function countdown() {
+        if (secondsRemaining > 0) {
+            secondsRemaining--;
+            updateTimerDisplay();
+        } else {
+            clearInterval(timerInterval);
+            timerElement.textContent = "Time's up!";
+            finishButton.disabled = true;
+            calculateScore();
+        }
+    }
+
+    function calculateScore() {
+        const displayedTime = timerElement.textContent.split(":");
+        const minutes = parseInt(displayedTime[0]);
+        const seconds = parseInt(displayedTime[1]);
+        const totalTimeInSeconds = (minutes * 60) + seconds;
+        const score = Math.floor(120 - totalTimeInSeconds);
+        scoreElement.textContent = `Score: ${score}`;
+    }
+
+    function finishCountdown() {
+        clearInterval(timerInterval);
+        calculateScore();
+        finishButton.disabled = true;
+    }
+
+    finishButton.addEventListener("click", finishCountdown);
+
+    // timerInterval = setInterval(countdown, 1000);
+
+    function resetCountdown() {
+        clearInterval(timerInterval);
+        secondsRemaining = 60;
+        updateTimerDisplay();
+        scoreElement.textContent = "Score: 0";
+        finishButton.disabled = false;
+    }
+
+    btnStart.addEventListener("click", function () {
+        timerInterval = setInterval(countdown, 1000);
+    });
+
+    btnReset.addEventListener("click", resetCountdown);
+
+});
+

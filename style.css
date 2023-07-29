@@ -10,6 +10,9 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
 }
 #nav{
     box-shadow: 1px 2px 3px 4px rgba(85, 85, 85, 0.4);
@@ -56,6 +59,7 @@ ul button{
     border-radius: 10px;
     padding: 5px;
     margin-top: 10px;
+
     background-color: rgb(234, 196, 238);
 }
 
@@ -89,4 +93,26 @@ ul button{
 
 .piece:hover{
     box-shadow: 1px 2px 3px 4px rgba(182, 182, 182, 0.4);
+}
+
+.score {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    font-size: 24px;
+    background-color: #f9f9f9;
+    padding: 5px 10px;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+.timer {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    font-size: 24px;
+    background-color: #f9f9f9;
+    padding: 5px 10px;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
 }
