@@ -94,12 +94,12 @@ document.addEventListener("DOMContentLoaded", function () {
     const btnStart = document.getElementById("btnStart");
     const btnReset = document.getElementById("btnReset");
 
-    let secondsRemaining = 60;
+    let secondsRemaining = 90;
     let timerInterval;
 
     function updateTimerDisplay() {
-        const minutes = Math.floor(secondsRemaining / 60);
-        const seconds = secondsRemaining % 60;
+        const minutes = Math.floor(secondsRemaining / 90);
+        const seconds = secondsRemaining % 90;
         timerElement.textContent = `${minutes}:${seconds.toString().padStart(2, "0")}`;
     }
 
@@ -119,7 +119,7 @@ document.addEventListener("DOMContentLoaded", function () {
         const displayedTime = timerElement.textContent.split(":");
         const minutes = parseInt(displayedTime[0]);
         const seconds = parseInt(displayedTime[1]);
-        const totalTimeInSeconds = (minutes * 60) + seconds;
+        const totalTimeInSeconds = (minutes * 90) + seconds;
         const score = Math.floor(120 - totalTimeInSeconds);
         scoreElement.textContent = `Score: ${score}`;
     }
@@ -136,7 +136,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function resetCountdown() {
         clearInterval(timerInterval);
-        secondsRemaining = 60;
+        secondsRemaining = 90;
         updateTimerDisplay();
         scoreElement.textContent = "Score: 0";
         finishButton.disabled = false;
