@@ -41,6 +41,19 @@ $(document).ready(function(){
         }
         return pieces;
     }
+
+    const scoreElement = document.getElementById("score");
+    const timerElement = document.getElementById("timer");
+
+    function calculateScore() {
+        const displayedTime = timerElement.textContent.split(":");
+        const minutes = parseInt(displayedTime[0]);
+        const seconds = parseInt(displayedTime[1]);
+        const totalTimeInSeconds = (minutes * 90) + seconds;
+        const score = Math.floor(totalTimeInSeconds + 10);
+        scoreElement.textContent = `Score: ${score}`;
+    }
+
     function checkIfPuzzleSolved(){
         if($("#puzzleContainer .droppedPiece").length != 16){
             return false;
@@ -50,10 +63,12 @@ $(document).ready(function(){
             var order = item.data("order");
             if(k != order){
                 $("#pieceContainer").text("Try Again!");
+                calculateScore();
                 return false;
             }
         }
         $("#pieceContainer").text("WOW! You are a GENIUS!");
+        calculateScore();
         return true;
     }
     function implementLogic(){
@@ -100,7 +115,7 @@ document.addEventListener("DOMContentLoaded", function () {
     function updateTimerDisplay() {
         const minutes = Math.floor(secondsRemaining / 90);
         const seconds = secondsRemaining % 90;
-        timerElement.textContent = `${minutes}:${seconds.toString().padStart(2, "0")}`;
+        timerElement.textContent = `${minutes}:${seconds.toString().padStart(2, "30")}`;
     }
 
     function countdown() {
@@ -120,7 +135,7 @@ document.addEventListener("DOMContentLoaded", function () {
         const minutes = parseInt(displayedTime[0]);
         const seconds = parseInt(displayedTime[1]);
         const totalTimeInSeconds = (minutes * 90) + seconds;
-        const score = Math.floor(120 - totalTimeInSeconds);
+        const score = Math.floor(totalTimeInSeconds + 10);
         scoreElement.textContent = `Score: ${score}`;
     }
 

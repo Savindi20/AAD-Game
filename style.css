@@ -69,12 +69,14 @@ ul button{
 }
 #starticon:hover{
     border-radius: 100%;
-    box-shadow: 1px 2px 3px 4px rgba(160, 160, 160, 0.719);
+    box-shadow: 0 10px 10px rgb(202, 202, 202);
+    /* box-shadow: 1px 2px 3px 4px rgba(160, 160, 160, 0.719); */
 }
 
-#btnStart:hover,
-#btnReset:hover{
-    box-shadow: 1px 2px 3px 4px rgba(160, 160, 160, 0.719);
+#btnStart,
+#btnReset{
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+    /* box-shadow: 1px 2px 3px 4px rgba(160, 160, 160, 0.719); */
 }
 
 #btnReset{
