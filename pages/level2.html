@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Jigsaw Puzzle</title>
+    <link href="../assest/images/icon.png" rel="icon">
+    <link href="../assest/Jquery/jquery-ui-1.13.2/jquery-ui.theme.css" rel="stylesheet">
+    <link href="../assest/Boostrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../pagestyle/level2style.css" rel="stylesheet">
+    <!-- =============================JavaScript======================================-->
+    <script src="../assest/Jquery/jquery-3.7.0.min.js"></script>
+    <script src="../assest/Jquery/jquery-ui-1.13.2/jquery-ui.min.js"></script>
+    <script src="../script.js"></script>
+</head>
+
+<body>
+<!-- ============================Game Main Form===================== -->
+<div class="full-height h-70 bg-dark shadow-lg rounded-5" id="container">
+    <div class="shadow-lg" id="pieceContainer">
+        <button id="LevelTwo"></button>
+    </div>
+    <div class="shadow-lg" id="puzzleContainer"></div>
+    <ul id="buttons">
+        <div class="container text-center">
+            <div class="row">
+                <div class="col">
+                    <li>
+                        <button id="btnStart">Start
+                            <img alt="" id="starticon" src="../assest/images/play.png">
+                        </button>
+                    </li>
+                    <li>
+                        <button id="btnReset" onclick="resetCountdown()">Reset
+                            <img alt="" id="starticon" src="../assest/images/restart.png">
+                        </button>
+                    </li>
+                </div>
+                <div class="col">
+                    <button id="finishButton" onclick="finishCountdown()">Finish</button>
+                </div>
+                <div class="col">
+                    <li class="nav-item" id="btnContainer">
+                        <a aria-current="page" class="nav-link" href="pages/level3.html"></i>
+                            <button style="width: 120px;">LevelThree</button>
+                        </a>
+                    </li>
+                </div>
+            </div>
+        </div>
+    </ul>
+    <div class="score" id="score">Score: 0</div>
+    <div class="timer" id="timer">1:30</div>
+
+</div>
+
+</body>
+
+</html>
